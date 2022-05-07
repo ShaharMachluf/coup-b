@@ -3,7 +3,7 @@
 #include "Contessa.hpp"
 
 namespace coup{
-    Contessa::Contessa(Game &g, string n):Player(g,n){
+    Contessa::Contessa(Game &g, string n):Player(g,move(n)){
         this->player_role = "Contessa";
     }
     void Contessa::block(Player player){

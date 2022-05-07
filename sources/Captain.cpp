@@ -3,7 +3,7 @@
 #include "Captain.hpp"
 
 namespace coup{
-    Captain::Captain(Game &g, string n):Player(g,n){
+    Captain::Captain(Game &g, string n):Player(g,move(n)){
         this->player_role = "Captain";
     }
     void Captain::steal(Player &player){
@@ -26,14 +26,14 @@ namespace coup{
     }
     void Captain::block(Player &player){
         check_start();
-        int num;
+        int num=0;
         vector<string>vec = player.get_last_play();
-        if(vec.at(0).compare("steal0") == 0){
+        if(vec.at(0) == "steal0"){
             num = 0;
         }
-        else if(vec.at(0).compare("steal1") == 0){
+        else if(vec.at(0) == "steal1"){
             num = 1;
-        }else if(vec.at(0).compare("steal2") == 0){
+        }else if(vec.at(0) == "steal2"){
             num = 2;
         }
         else{

@@ -22,10 +22,10 @@ namespace coup{
         string turn();
         void next_turn();
         string winner();
-        void remove_player(string name);
-        void assassination(string name);
+        void remove_player(string const &name);
+        void assassination(string const &name);
         void add_player(coup::Player &player);
         void put_back();
-        bool began();
+        bool began() const;
     };
 };

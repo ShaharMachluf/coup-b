@@ -3,7 +3,7 @@
 #include "Duke.hpp"
 
 namespace coup{
-    Duke::Duke(Game &g, string n):Player(g,n){
+    Duke::Duke(Game &g, string n):Player(g,move(n)){
         this->player_role = "Duke";
     }
     void Duke::tax(){

@@ -20,10 +20,10 @@ namespace coup{
         Player(Game &g, string n);
         void income();
         void foreign_aid();
-        virtual void coup(Player player);
+        virtual void coup(Player &player);
         string role();
-        int coins();
-        virtual void block(Player player);
+        int coins() const;
+        virtual void block(Player &player);
         void add_coins(int num);
         void remove_coins(int num);
         string get_name();

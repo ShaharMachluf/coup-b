@@ -3,7 +3,7 @@
 #include "Ambassador.hpp"
 
 namespace coup{
-    Ambassador::Ambassador(Game &g, string n):Player(g,n){
+    Ambassador::Ambassador(Game &g, string n):Player(g,move(n)){
         this->player_role = "Ambassador";
     }
     void Ambassador::transfer(Player &p1, Player &p2){
@@ -19,14 +19,14 @@ namespace coup{
     }
     void Ambassador::block(Player &player){
         check_start();
-        int num;
+        int num=0;
         vector<string>vec = player.get_last_play();
-        if(vec.at(0).compare("steal0") == 0){
+        if(vec.at(0) == "steal0"){
             num = 0;
         }
-        else if(vec.at(0).compare("steal1") == 0){
+        else if(vec.at(0) == "steal1"){
             num = 1;
-        }else if(vec.at(0).compare("steal2") == 0){
+        }else if(vec.at(0) == "steal2"){
             num = 2;
         }
         else{
