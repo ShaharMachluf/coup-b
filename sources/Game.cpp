@@ -62,7 +62,7 @@ namespace coup{
     }
     void Game::add_player(Player &player){
         if(this->player_list.size()>=MAX_PLAYERS){
-            throw("a game has max of 6 players");
+            throw logic_error("a game has max of 6 players");
         }
         this->player_list.push_back(player.get_name());
         this->Player_obj_list.push_back(&player);
